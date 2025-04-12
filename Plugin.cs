@@ -82,7 +82,7 @@ namespace EmployeeAssignmentsRevived
     /// </summary>
     public static class Assignments
     {
-        public static readonly Assignment[] All = new Assignment[3]
+        public static readonly Assignment[] All = new Assignment[]
         {
             new Assignment
             {
@@ -166,9 +166,7 @@ namespace EmployeeAssignmentsRevived
         public const string PLUGIN_GUID = "FluxTeam.EmployeeAssignmentsRevived";
         public const string PLUGIN_NAME = "EmployeeAssignmentsRevived";
         public const string PLUGIN_AUTHOR = "FluxTeam";
-        public const string PLUGIN_VERSION = "2.0.0";
-
-        public const string DOWNLOAD_URL = "https://thunderstore.io/package/download/FluxTeam/EmployeeAssignmentsRevived/" + PLUGIN_VERSION;
+        public const string PLUGIN_VERSION = "2.0.1";
         public const string VERSION_TEXT = "Employee Assignments Revived mod is out of date. Please update to at least v" + PLUGIN_VERSION + ".";
     }
 }

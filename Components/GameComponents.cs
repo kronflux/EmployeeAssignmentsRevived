@@ -91,47 +91,4 @@ namespace EmployeeAssignmentsRevived.Components
             }
         }
     }
-
-    /// <summary>
-    /// Checks for outdated mod version by pinging Thunderstore and showing a warning in the main menu if necessary.
-    /// </summary>
-    public class UpdateChecker : MonoBehaviour
-    {
-        private UnityWebRequestAsyncOperation _webRequest;
-        public bool IsLatestVersion { get; private set; }
-
-        private void Awake()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            if (scene.buildIndex == 2) // Main menu
-            {
-                var req = new UnityWebRequest(PluginInfo.DOWNLOAD_URL);
-                _webRequest = req.SendWebRequest();
-                _webRequest.completed += OnComplete;
-                SceneManager.sceneLoaded -= OnSceneLoaded;
-            }
-        }
-
-        private void OnComplete(AsyncOperation op)
-        {
-            IsLatestVersion = _webRequest.webRequest.responseCode == 404;
-
-            if (!IsLatestVersion)
-            {
-                var menu = GameObject.FindObjectOfType<MenuManager>();
-                if (menu != null)
-                {
-                    menu.menuNotificationText.text = PluginInfo.VERSION_TEXT;
-                    menu.menuNotificationButtonText.text = "[ CLOSE ]";
-                    menu.menuNotification.SetActive(true);
-                }
-            }
-
-            _webRequest = null;
-        }
-    }
 }

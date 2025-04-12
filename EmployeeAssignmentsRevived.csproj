@@ -91,6 +91,7 @@
     <Compile Include="AssignmentLogic\AssignmentLogic.cs" />
     <Compile Include="AssignmentLogic\HuntAndValveLogic.cs" />
     <Compile Include="Components\GameComponents.cs" />
+    <Compile Include="Components\UpdateChecker.cs" />
     <Compile Include="Data\EAContext.cs" />
     <Compile Include="Network\NetworkEvents.cs" />
     <Compile Include="Network\NetworkUtils.cs" />
